@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Baixa Visão • Blog Projeto</title>
+    <style>
+        /* Y2K / Acid Graphic Palette & Typography */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FDF9F3; /* Off-white / Creme da imagem */
+            --text-color: #111111;
+            --accent-pink: #FFD3E8; /* Rosa claro Y2K autêntico */
+            --dark-gray: #222222;
+            --border-radius-lg: 24px;
+            --border-radius-sm: 14px;
+            --card-text: #111111;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.2s, color 0.2s;
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+
+        /* Top Accessibility Bar */
+        .accessibility-bar {
+            background-color: var(--dark-gray);
+            padding: 10px 15px;
+            display: table;
+            width: 100%;
+        }
+        
+        .accessibility-right {
+            text-align: right;
+        }
+
+        .acc-btn {
+            background-color: var(--accent-pink);
+            color: #000000;
+            border: none;
+            padding: 6px 14px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 10pt;
+        }
+
+        /* Header Y2K Aesthetics */
+        header {
+            padding: 25px 30px;
+            border-bottom: 2px solid var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .logo {
+            font-size: 20pt;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            background-color: var(--accent-pink);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #000000;
+        }
+
+        .nav-links {
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 11pt;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 40px 10px;
+            background-color: #FFFFFF;
+            border: 2px solid var(--dark-gray);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 35px;
+            box-shadow: 4px 4px 0px var(--dark-gray);
+        }
+
+        .hero h1 {
+            font-size: 26pt;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 12pt;
+            margin: 0;
+            color: #555555;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #FFFFFF;
+            border: 2px solid var(--dark-gray);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 16pt;
+            margin-top: 0;
+            letter-spacing: -0.5px;
+            border-left: 5px solid var(--accent-pink);
+            padding-left: 10px;
+        }
+
+        /* Grid de Informações Técnicas */
+        .info-grid {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+        
+        .info-grid td {
+            padding: 15px;
+            vertical-align: top;
+            background-color: #FDFBFA;
+            border: 1px solid #E0E0E0;
+            border-radius: var(--border-radius-sm);
+            color: var(--card-text);
+        }
+
+        /* Blog Section */
+        .blog-title-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .blog-badge {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 10pt;
+            display: inline-block;
+        }
+
+        /* Post Card (Y2K Black Box Style) */
+        .post-card {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .post-card h3 {
+            color: var(--accent-pink);
+            font-size: 14pt;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Image Display Box */
+        .image-box {
+            background-color: #333333;
+            border: 2px dashed var(--accent-pink);
+            border-radius: var(--border-radius-sm);
+            height: 180px;
+            margin-bottom: 15px;
+            text-align: center;
+            display: table;
+            width: 100%;
+        }
+
+        .image-box span {
+            display: table-cell;
+            vertical-align: middle;
+            color: #AAAAAA;
+            font-size: 10pt;
+        }
+
+        .desc-button {
+            background-color: var(--accent-pink);
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 10pt;
+            transition: transform 0.1s;
+        }
+
+        .desc-button:active {
+            transform: scale(0.98);
+        }
+
+        .description-text {
+            margin-top: 15px;
+            background-color: #1A1A1A;
+            padding: 15px;
+            border-radius: var(--border-radius-sm);
+            border-left: 3px solid var(--accent-pink);
+            font-size: 10.5pt;
+            color: #FFFFFF;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 9pt;
+            border-top: 2px solid var(--dark-gray);
+            color: #666666;
+        }
+
+        /* --- MODO ALTO CONTRASTE CORRIGIDO --- */
+        body.high-contrast {
+            --bg-color: #000000;
+            --text-color: #FFFF00;
+            --accent-pink: #FFFF00;
+            --dark-gray: #000000;
+            --card-text: #FFFF00; /* Força o texto dentro dos cards a ficar amarelo */
+        }
+
+        body.high-contrast .logo {
+            color: #FFFF00 !important;
+        }
+
+        body.high-contrast .logo span {
+            background-color: #FFFF00;
+            color: #000000;
+        }
+
+        body.high-contrast .hero, 
+        body.high-contrast .info-section, 
+        body.high-contrast .post-card {
+            background-color: #000000 !important;
+            border: 3px solid #FFFF00 !important;
+            color: #FFFF00 !important;
+            box-shadow: none !important;
+        }
+
+        body.high-contrast .hero p {
+            color: #FFFF00 !important;
+        }
+
+        body.high-contrast .info-grid td {
+            background-color: #000000 !important;
+            border: 1px solid #FFFF00 !important;
+            color: #FFFF00 !important;
+        }
+
+        body.high-contrast .image-box {
+            border: 2px dashed #FFFF00 !important;
+            background-color: #000000 !important;
+        }
+
+        body.high-contrast .image-box span {
+            color: #FFFF00 !important;
+        }
+
+        body.high-contrast .desc-button {
+            background-color: #FFFF00 !important;
+            color: #000000 !important;
+            border: 2px solid #FFFF00 !important;
+        }
+
+        body.high-contrast .description-text {
+            background-color: #000000 !important;
+            border: 1px solid #FFFF00 !important;
+            color: #FFFF00 !important;
+        }
+        
+        body.high-contrast header {
+            border-bottom: 2px solid #FFFF00 !important;
+        }
+        
+        body.high-contrast .nav-links a {
+            color: #FFFF00 !important;
+        }
+        
+        body.high-contrast footer {
+            color: #FFFF00 !important;
+            border-top: 2px solid #FFFF00 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="accessibility-bar">
+        <table style="width: 100%;">
+            <tr>
+                <td style="color: #FFF; font-weight: bold; font-size: 9pt; vertical-align: middle;">Acessibilidade:</td>
+                <td class="accessibility-right">
+                    <button class="acc-btn" onclick="changeFontSize('increase')">A+</button>
+                    <button class="acc-btn" onclick="changeFontSize('decrease')">A-</button>
+                    <button class="acc-btn" onclick="toggleContrast()">Alto Contraste</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <header>
+        <table class="header-table">
+            <tr>
+                <td class="logo"><span>Baixa</span>.Visão</td>
+                <td class="nav-links">
+                    <a href="#sobre">O que é</a>
+                    <a href="#doencas">Doenças</a>
+                    <a href="#blog">Nosso Blog</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>BAIXA VISÃO</h1>
+            <p>Acessibilidade e Inclusão na Sala de Aula</p>
+        </div>
+
+        <div id="sobre" class="info-section">
+            <h2>O que é a Baixa Visão?</h2>
+            <p>A baixa visão (também chamada de visão subnormal) é uma condição crônica onde a pessoa apresenta uma perda severa da capacidade de enxergar, que não pode ser corrigida com o uso de óculos comuns, cirurgias ou medicamentos. Diferente de um problema de refração simples (como miopia), a estrutura dos olhos ou os caminhos neurológicos da visão sofreram danos.</p>
+            
+            <p>No ambiente digital, pessoas com baixa visão encontram imensas barreiras quando os sites possuem letras muito pequenas, layouts fixos ou falta de contraste claro entre o texto e o plano de fundo.</p>
+            
+            <h3 style="margin-top: 20px; font-size: 12pt;">Baixa Visão vs. Cegueira Total</h3>
+            <p>É fundamental compreender que a deficiência visual possui diferentes níveis:</p>
+            <table class="info-grid">
+                <tr>
+                    <td style="width: 50%;">
+                        <strong>Baixa Visão:</strong><br>
+                        A pessoa preserva uma parcela de visão útil (resíduo visual). Elas podem ser capazes de perceber vultos, luzes, distinguir cores ou ler textos, desde que estes estejam muito ampliados ou com alto contraste.
+                    </td>
+                    <td style="width: 50%;">
+                        <strong>Cegueira Total:</strong><br>
+                        Há uma perda completa da visão, onde não há sequer a percepção da luz (ausência de estímulo visual). Pessoas com cegueira total dependem inteiramente de leitores de tela que transformam texto em áudio e do sistema Braille.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="doencas" class="info-section">
+            <h2>Exemplos de Condições e Doenças</h2>
+            <p>A perda de acuidade ou de campo visual pode ser desencadeada por diversos fatores médicos ao longo da vida ou desde o nascimento:</p>
+            
+            <ul style="padding-left: 20px; margin-top: 10px;">
+                <li style="margin-bottom: 10px;"><strong>Glaucoma:</strong> Uma doença que danifica o nervo óptico, geralmente ligada ao aumento da pressão interna do olho. Ela costuma roubar primeiro a visão periférica (as laterais), criando um efeito de "visão em túnel".</li>
+                <li style="margin-bottom: 10px;"><strong>Catarata:</strong> É a opacificação do cristalino (a lente natural do olho). Deixa a visão embaçada, como se a pessoa estivesse olhando através de um vidro sujo ou nublado. Pode ser corrigida cirurgicamente na maioria dos casos.</li>
+                <li style="margin-bottom: 10px;"><strong>Retinopatia Diabética:</strong> Uma complicação do diabetes que afeta os vasos sanguíneos da retina, podendo causar pontos cegos parciais, manchas escuras ou visão borrada em áreas aleatórias do campo visual.</li>
+                <li style="margin-bottom: 10px;"><strong>DMRI (Degeneração Macular):</strong> Afeta a área central da retina (mácula), fazendo com que a pessoa perca a capacidade de enxergar detalhes bem no centro do seu foco, dificultando a leitura e o reconhecimento de rostos.</li>
+            </ul>
+        </div>
+
+        <div id="blog" class="blog-title-container">
+            <div class="blog-badge">DIÁRIO DE PROJETOS</div>
+            <h2 style="border: none; padding: 0; margin-top: 10px; font-size: 18pt;">Blog da Nossa Turma</h2>
+            <p>Acompanhe abaixo as imagens e explicações das atividades que estamos desenvolvendo em sala de aula.</p>
+        </div>
+
+        <div class="post-card">
+            <h3>Projeto 01: Pesquisa Acadêmica e Conceito</h3>
+            <p>Esta foi a nossa primeira atividade em grupo, onde nos reunimos para definir como a estética moderna do site poderia se unir
