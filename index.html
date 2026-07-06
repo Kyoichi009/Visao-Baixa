@@ -11,14 +11,19 @@
         }
 
         :root {
-            --bg-color: #FDF9F3; 
+            --bg-color: #FDF9F3; /* Off-white / Creme da imagem original */
             --text-color: #111111;
-            --accent-pink: #FFD3E8; 
+            --accent-pink: #FFD3E8; /* Rosa claro Y2K */
             --dark-gray: #222222;
             --card-bg: #FFFFFF;
             --border-radius-lg: 24px;
             --border-radius-sm: 14px;
-            font-size: 18px; /* Base estável para o seletor de tamanho */
+            --card-text: #111111;
+        }
+
+        /* Aplicação do tamanho base de fonte */
+        html {
+            font-size: 18px;
         }
 
         body {
@@ -33,30 +38,38 @@
         /* Barra de Acessibilidade Fixa */
         .accessibility-bar {
             background-color: var(--dark-gray);
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 2px solid var(--dark-gray);
         }
 
         .accessibility-bar span {
             color: #FFFFFF;
             font-weight: bold;
+            font-size: 1rem;
         }
 
         .acc-btn {
             background-color: var(--accent-pink);
             color: #000000;
-            border: none;
+            border: 2px solid #000000;
             padding: 8px 16px;
             font-weight: bold;
             border-radius: 10px;
             cursor: pointer;
             margin-left: 8px;
             font-size: 1rem;
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        .acc-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px #000000;
         }
 
         /* Cabeçalho */
@@ -81,6 +94,7 @@
             padding: 2px 8px;
             border-radius: 6px;
             color: #000000;
+            border: 2px solid var(--dark-gray);
         }
 
         /* Banner Principal */
@@ -92,4 +106,339 @@
             border-radius: var(--border-radius-lg);
             margin: 30px auto;
             max-width: 1200px;
-            box-shadow: 4px 4px 0px var(--
+            box-shadow: 4px 4px 0px var(--dark-gray);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        /* LAYOUT EM DUAS COLUNAS (LADO A LADO) */
+        .main-layout {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        /* Coluna Esquerda: Teoria e Informações */
+        .left-column {
+            flex: 1;
+        }
+
+        /* Coluna Direita: Parte Acadêmica / Blog */
+        .right-column {
+            flex: 1;
+        }
+
+        /* Blocos de Conteúdo */
+        .info-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--dark-gray);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 25px;
+            color: var(--card-text);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            letter-spacing: -0.5px;
+            border-left: 6px solid var(--accent-pink);
+            padding-left: 10px;
+            color: var(--text-color);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--card-text);
+        }
+
+        /* Elementos do Blog (Lado Direito) */
+        .blog-badge {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 2px solid var(--dark-gray);
+        }
+
+        .post-card {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid var(--dark-gray);
+        }
+
+        .post-card h3 {
+            color: var(--accent-pink);
+            margin-top: 0;
+        }
+
+        .post-card p {
+            color: #FFFFFF;
+        }
+
+        /* Espaço das Abas de Imagem */
+        .image-box {
+            background-color: #333333;
+            border: 2px dashed var(--accent-pink);
+            border-radius: var(--border-radius-sm);
+            height: 220px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DDDDDD;
+            padding: 10px;
+        }
+
+        .desc-button {
+            background-color: var(--accent-pink);
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        .desc-button:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px #000000;
+        }
+
+        .description-text {
+            margin-top: 15px;
+            background-color: #1A1A1A;
+            padding: 15px;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--accent-pink);
+            color: #FFFFFF;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 2px solid var(--dark-gray);
+            color: var(--text-color);
+            opacity: 0.9;
+            font-weight: bold;
+        }
+
+        /* --- MODO ALTO CONTRASTE CORRIGIDO --- */
+        html.high-contrast {
+            --bg-color: #000000 !important;
+            --text-color: #FFFF00 !important;
+            --accent-pink: #FFFF00 !important;
+            --dark-gray: #FFFF00 !important;
+            --card-bg: #000000 !important;
+            --card-text: #FFFF00 !important;
+        }
+
+        /* Força todos os elementos a respeitarem o amarelo no preto */
+        html.high-contrast body,
+        html.high-contrast header,
+        html.high-contrast .hero,
+        html.high-contrast .info-card,
+        html.high-contrast .post-card,
+        html.high-contrast td,
+        html.high-contrast p,
+        html.high-contrast li,
+        html.high-contrast h1,
+        html.high-contrast h2,
+        html.high-contrast h3,
+        html.high-contrast div,
+        html.high-contrast span {
+            background-color: #000000 !important;
+            color: #FFFF00 !important;
+            border-color: #FFFF00 !important;
+            box-shadow: none !important;
+        }
+
+        html.high-contrast .acc-btn, 
+        html.high-contrast .desc-button {
+            background-color: #FFFF00 !important;
+            color: #000000 !important;
+            border: 2px solid #FFFF00 !important;
+        }
+
+        html.high-contrast .image-box {
+            border: 2px dashed #FFFF00 !important;
+            background-color: #000000 !important;
+        }
+
+        html.high-contrast .image-box span,
+        html.high-contrast .post-card p,
+        html.high-contrast .description-text {
+            color: #FFFF00 !important;
+            background-color: #000000 !important;
+        }
+
+        html.high-contrast footer {
+            border-top: 2px solid #FFFF00 !important;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 850px) {
+            .main-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="accessibility-bar">
+        <span>Acessibilidade:</span>
+        <div>
+            <button class="acc-btn" onclick="changeFontSize('increase')" aria-label="Aumentar texto">A+</button>
+            <button class="acc-btn" onclick="changeFontSize('decrease')" aria-label="Diminuir texto">A-</button>
+            <button class="acc-btn" onclick="toggleContrast()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo"><span>Baixa</span>.Visão</div>
+    </header>
+
+    <div class="hero">
+        <h1>BAIXA VISÃO</h1>
+        <p>Acessibilidade e Inclusão na Sala de Aula</p>
+    </div>
+
+    <div class="main-layout">
+        
+        <div class="left-column">
+            
+            <div class="info-card">
+                <h2>O que é a Baixa Visão?</h2>
+                <p>A baixa visão (ou visão subnormal) é uma condição crônica em que a pessoa apresenta uma perda severa e irreversível da capacidade de enxergar. Ela não pode ser totalmente corrigida com óculos comuns, lentes de contato, cirurgias ou medicamentos.</p>
+                <p>No ambiente digital, barreiras como letras pequenas e a falta de contraste adequado dificultam severamente o acesso dessa população a conteúdos online.</p>
+            </div>
+
+            <div class="info-card">
+                <h2>Baixa Visão vs. Cegueira Total</h2>
+                <p><strong>Baixa Visão:</strong> A pessoa preserva um resíduo visual útil. Ela consegue enxergar contornos, cores, luzes e grandes formatos, dependendo inteiramente de recursos de ampliação e ajustes de cores como os deste site.</p>
+                <p><strong>Cegueira Total:</strong> Há a perda completa da visão, sem qualquer percepção de luminosidade. Quem possui cegueira total navega na internet utilizando áudios completos e leitores de tela.</p>
+            </div>
+
+            <div class="info-card">
+                <h2>Exemplos de Condições e Doenças</h2>
+                <ul>
+                    <li><strong>Glaucoma:</strong> Causa danos permanentes no nervo óptico. Costuma reduzir primeiro a visão periférica, dando a sensação de "visão em túnel".</li>
+                    <li><strong>Catarata:</strong> Torna o cristalino opaco. A pessoa passa a enxergar tudo de forma nublada ou intensamente embaçada.</li>
+                    <li><strong>Retinopatia Diabética:</strong> Lesiona os vasos sanguíneos internos da retina, gerando manchas escuras ou pontos cegos no campo de visão.</li>
+                    <li><strong>DMRI (Degeneração Macular):</strong> Degrada a parte central da retina, fazendo o paciente perder a capacidade de focar em detalhes centrais e ler.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            
+            <div class="blog-badge">DIÁRIO ACADÊMICO</div>
+
+            <div class="post-card">
+                <h3>Projeto 01: Pesquisa Acadêmica e Conceito</h3>
+                <p>Nossa primeira atividade em grupo focou em mapear os conceitos técnicos exigidos pelo professor e entender como o design Y2K poderia abraçar a inclusão visual.</p>
+                
+                <div class="image-box" id="box-img-1">
+                    <span>[ Cole o código da sua Imagem 1 aqui ]</span>
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-1')">Acessar Descrição</button>
+                <div id="desc-1" class="description-text hidden">
+                    <strong>Descrição da imagem 1:</strong> Integrantes do grupo reunidos debatendo os conceitos de acessibilidade digital e planejando o contraste do layout em folhas de rascunho.
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>Projeto 02: Desenvolvimento do Código</h3>
+                <p>Na segunda fase, estruturamos os scripts para garantir que os botões de controle de fonte e o alto contraste agissem de maneira imediata em toda a tela.</p>
+                
+                <div class="image-box" id="box-img-2">
+                    <span>[ Cole o código da sua Imagem 2 aqui ]</span>
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-2')">Acessar Descrição</button>
+                <div id="desc-2" class="description-text hidden">
+                    <strong>Descrição da imagem 2:</strong> Captura de tela mostrando as linhas de código JavaScript responsáveis por injetar as propriedades de acessibilidade diretamente na raiz do navegador.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Escolar sobre Baixa Visão. Desenvolvido com HTML, CSS e JavaScript.</p>
+    </footer>
+
+    <script>
+        // Sistema Definitivo de Controle de Fonte (Altera a raiz do HTML em REM)
+        function changeFontSize(action) {
+            const htmlElement = document.documentElement;
+            let currentSize = parseFloat(window.getComputedStyle(htmlElement).fontSize);
+
+            if (action === 'increase') {
+                if (currentSize < 32) { 
+                    htmlElement.style.fontSize = (currentSize + 2) + 'px';
+                }
+            } else if (action === 'decrease') {
+                if (currentSize > 14) { 
+                    htmlElement.style.fontSize = (currentSize - 2) + 'px';
+                }
+            }
+        }
+
+        // Sistema Definitivo de Alto Contraste (Injeta classe global e força estilos)
+        function toggleContrast() {
+            document.documentElement.classList.toggle('high-contrast');
+        }
+
+        // Sistema Independente para Mostrar/Esconder as Descrições das Imagens
+        function toggleDescription(descId) {
+            const descElement = document.getElementById(descId);
+            if (descElement.classList.contains('hidden')) {
+                descElement.classList.remove('hidden');
+            } else {
+                descElement.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
